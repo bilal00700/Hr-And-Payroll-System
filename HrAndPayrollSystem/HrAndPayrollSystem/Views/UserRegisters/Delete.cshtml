@@ -1,0 +1,184 @@
+﻿@model HrAndPayrollSystem.Models.UserRegister
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>UserRegister</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Username)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Username)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SystemCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SystemCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserCategory)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserCategory)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DpCreate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DpCreate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DpEdit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DpEdit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DpDetail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DpDetail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DpDelete)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DpDelete)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DgCreate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DgCreate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DgEdit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DgEdit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DgDetail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DgDetail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DgDelete)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DgDelete)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PmCreate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PmCreate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PmEdit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PmEdit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PmDetail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PmDetail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PmDelete)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PmDelete)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LcCreate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LcCreate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LcEdit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LcEdit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LcDetail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LcDetail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LcDelete)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LcDelete)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

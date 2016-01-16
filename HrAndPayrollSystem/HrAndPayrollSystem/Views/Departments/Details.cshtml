@@ -1,0 +1,79 @@
+﻿@model HrAndPayrollSystem.Models.Department
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<section class="content-header">
+    <h1>
+        Department Details
+        <small>Detailed information of a department is shown below</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><i class="fa fa-cog"></i>&nbsp; Basic Setup</li>
+        <li>@Html.ActionLink("Department", "Index")</li>
+        <li class="active"> Details</li>
+    </ol>
+</section>
+
+<section class="content">
+
+    <div>
+        <h4>Department</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Title)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Title)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.GroupCode)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.GroupCode)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.GroupTitle)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.GroupTitle)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ContactPerson)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ContactPerson)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Address)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Address)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ContactNumber)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ContactNumber)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</section>

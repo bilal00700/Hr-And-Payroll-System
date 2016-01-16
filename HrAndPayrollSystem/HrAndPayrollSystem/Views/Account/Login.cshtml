@@ -1,0 +1,92 @@
+﻿@model HrAndPayrollSystem.Models.UserLogin
+
+@{
+    ViewBag.Title = "Log in";
+}
+<div class="row">
+    <div class="col-sm-8 col-sm-offset-2 text">
+        <h1><strong>Human Resource</strong> Management System</h1>
+        <div class="description">
+            <p>
+                The most comprehensive and the most generalized online application for Human Resource and Payroll
+                Management!
+            </p>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-6 col-sm-offset-3 form-box">
+        <div class="form-top">
+            <div class="form-top-left">
+                <h3>Login to our site</h3>
+                <p>Enter your username and password to log on:</p>
+            </div>
+            <div class="form-top-right">
+                <i class="fa fa-lock"></i>
+            </div>
+        </div>
+        <div class="form-bottom">
+           @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "login-form", role = "form" }))
+           {
+               @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Username, new { @class = "sr-only" })
+                    @Html.TextBoxFor(m => m.Username, new { @class = "form-username form-control", @id = "form-username" })
+                    @Html.ValidationMessageFor(m => m.Username, "", new { @class = "text-danger" })
+
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Password, new { @class = "sr-only" })
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-password form-control", @id = "form-password" })
+                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+
+                </div>
+                <input type="submit" value="Log in" class="btn btn-success btn-lg btn-block" />
+
+                @* Enable this once you have account confirmation enabled for password reset functionality
+                    <p>
+                        @Html.ActionLink("Forgot your password?", "ForgotPassword")
+                    </p>*@
+           } 
+        </div>       
+    </div> 
+</div>
+<div class="row">
+    <div class="col-sm-6 col-sm-offset-3 social-login">
+        <h3>...or login with:</h3>
+        <div class="social-login-buttons">
+            <a class="btn btn-link-2" href="#">
+                <i class="fa fa-facebook"></i> Facebook
+            </a>
+            <a class="btn btn-link-2" href="#">
+                <i class="fa fa-twitter"></i> Twitter
+            </a>
+            <a class="btn btn-link-2" href="#">
+                <i class="fa fa-google-plus"></i> Google Plus
+            </a>
+        </div>
+    </div>
+</div>
+
+@section scripts {    
+    <script src="@Url.Content("~/assets/js/jquery-1.11.1.min.js")"></script>
+    <script src="@Url.Content("~/assets/bootstrap/js/bootstrap.min.js")"></script>
+    <script src="@Url.Content("~/assets/js/jquery.backstretch.min.js")"></script>
+    <script src="@Url.Content("~/assets/js/scripts.js")"></script>
+    <script src="@Url.Content("~/assets/js/placeholder.js")"></script>
+}
+@section styles {
+    <link href="@Url.Content("http://fonts.googleapis.com/css?family=Roboto:400,100,300,500")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/bootstrap/css/bootstrap.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/font-awesome/css/font-awesome.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/form-elements.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/style.css")" rel="stylesheet" />
+}
+@section icons {
+    <link href="@Url.Content("~/assets/ico/favicon.png")" rel="shortcut icon" />
+    <link href="@Url.Content("~/assets/ico/apple-touch-icon-144-precomposed.png")" rel="apple-touch-icon-precomposed" sizes="144x144" />
+    <link href="@Url.Content("~/assets/ico/apple-touch-icon-114-precomposed.png")" rel="apple-touch-icon-precomposed" sizes="114x114" />
+    <link href="@Url.Content("~/assets/ico/apple-touch-icon-72-precomposed.png")" rel="apple-touch-icon-precomposed" sizes="72x72" />
+    <link href="@Url.Content("~/assets/ico/apple-touch-icon-57-precomposed.png")" rel="apple-touch-icon-precomposed" />
+}

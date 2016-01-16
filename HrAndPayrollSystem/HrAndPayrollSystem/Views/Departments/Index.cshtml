@@ -1,0 +1,112 @@
+﻿<div id="div_element">
+    @model IEnumerable<HrAndPayrollSystem.Models.Department>
+
+    @{
+        ViewBag.Title = "Departments";
+        Layout = "~/Views/Shared/_PublicLayout.cshtml";
+    }
+
+    <section class="content-header">
+        <h1>
+            Departments
+            <small>Below are all of the departments added</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><i class="fa fa-cog"></i>&nbsp; Basic Setup</li>
+            <li class="active">Department</li>
+        </ol>
+    </section>
+    <br>
+    <section class="content">
+        <p>
+            @if ((bool)Session["DpCreate"] == true)
+            {
+                <a href="@Url.Action("Create")"><i class="fa fa-pencil">&nbsp;Create new</i></a>
+            }
+            else
+            {
+                <i class="fa fa-pencil-square text-muted"></i>
+            }
+        </p>
+        <br>
+        <table class="table" id="myTable">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Title)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.GroupCode)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.GroupTitle)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ContactPerson)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Address)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ContactNumber)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+            {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Title)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.GroupCode)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.GroupTitle)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ContactPerson)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Address)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ContactNumber)
+                        </td>
+                        <td>
+                            @if ((bool)Session["DpEdit"] == true)
+                            {
+                                <a href="@Url.Action("Edit", new { SystemCode = item.SystemCode, Code = item.Code })" class="fa fa-edit"></a>
+                            }
+                            else
+                            {
+                                <i class="fa fa-edit text-muted"></i>
+                            }
+                            |
+                            @if ((bool)Session["DpDetail"] == true)
+                            {
+                                <a href="@Url.Action("Details", new { SystemCode = item.SystemCode, Code = item.Code })" class="fa fa-align-left"></a>
+                            }
+                            else
+                            {
+                                <i class="fa fa-align-left text-muted"></i>
+                            }
+                            |
+                            @if ((bool)Session["DpDelete"] == true)
+                            {
+                                <a href="@Url.Action("Delete", new { SystemCode = item.SystemCode, Code = item.Code })" class="fa fa-trash"></a>
+                            }
+                            else
+                            {
+                                <i class="fa fa-trash text-muted"></i>
+                            }
+
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </section>
+</div>

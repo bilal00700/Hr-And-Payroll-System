@@ -1,0 +1,39 @@
+﻿@model HrAndPayrollSystem.Models.PaymentMode
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<section class="content-header">
+    <h1>
+        Payment Mode Details
+        <small>Detailed information of a payment mode is shown below</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><i class="fa fa-cog"></i>&nbsp; Basic Setup</li>
+        <li>@Html.ActionLink("Payment Mode", "Index")</li>
+        <li class="active"> Details</li>
+    </ol>
+</section>
+
+<section class="content">
+
+    <div>
+        <h4>PaymentMode</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Title)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Title)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</section>

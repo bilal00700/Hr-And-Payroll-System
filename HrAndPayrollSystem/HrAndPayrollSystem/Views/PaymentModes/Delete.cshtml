@@ -1,0 +1,46 @@
+﻿@model HrAndPayrollSystem.Models.PaymentMode
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<section class="content-header">
+    <h1>
+        Delete Payment Mode
+        <small>Delete the following payment mode by clicking the delete button below</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><i class="fa fa-cog"></i>&nbsp; Basic Setup</li>
+        <li>@Html.ActionLink("Payment Mode", "Index")</li>
+        <li class="active"> Delete</li>
+    </ol>
+</section>
+
+<section class="content">
+
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+        <h4>Payment Mode</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Title)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Title)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>
+</section>

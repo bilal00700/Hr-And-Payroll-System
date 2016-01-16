@@ -1,0 +1,241 @@
+﻿@model HrAndPayrollSystem.Models.UserRegister
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>UserRegister</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Username)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Username)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SystemCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SystemCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserCategory)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserCategory)
+        </dd>   
+
+    </dl>
+    <br /> <br />
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-offset-2 col-md-1">
+                <b>Create</b>
+            </div>
+
+            <div class="col-md-1">
+                <b>Edit</b>
+            </div>
+
+            <div class="col-md-1">
+                <b>Detail</b>
+            </div>
+
+            <div class="col-md-1">
+                <b>Delete</b>
+            </div>
+
+        </div>
+        <br />
+        <div class="row">
+
+            <div class="col-md-2" align="right">
+                <b>Department :</b>
+            </div>
+            <div class="col-md-1">
+
+                @Html.DisplayFor(model => model.DpCreate)
+                
+
+            </div>
+
+
+
+
+            <div class="col-md-1">
+
+                @Html.DisplayFor(model => model.DpEdit)
+                
+
+            </div>
+
+
+
+
+            <div class="col-md-1">
+
+                @Html.DisplayFor(model => model.DpDetail)
+                
+
+            </div>
+
+
+
+
+            <div class="col-md-1">
+
+                @Html.DisplayFor(model => model.DpDelete)
+                
+
+            </div>
+
+        </div>
+        <br />
+        <div class="row">
+
+            <div class="col-md-2" align="right">
+                <b>Designation :</b>
+            </div>
+            <div class="col-md-1">
+
+                @Html.DisplayrFor(model => model.DgCreate)
+                
+
+            </div>
+
+
+
+            <div class="col-md-1">
+
+                @Html.DisplayFor(model => model.DgEdit)
+                
+
+            </div>
+
+
+
+
+            <div class="col-md-1">
+
+                @Html.DisplayFor(model => model.DgDetail)
+                
+
+            </div>
+
+
+
+
+            <div class="col-md-1">
+
+                @Html.DisplayFor(model => model.DgDelete)
+               
+
+            </div>
+
+        </div>
+
+        <br />
+        <div class="row">
+            <div class="col-md-2" align="right">
+                <b> Payment Mode :</b>
+            </div>
+            <div class="col-md-1">
+
+                @Html.DisplayFor(model => model.PmCreate)
+                
+
+            </div>
+
+
+
+
+            <div class="col-md-1">
+
+                @Html.DisplayFor(model => model.PmEdit)
+                
+
+            </div>
+
+
+
+
+            <div class="col-md-1">
+
+                @Html.DisplayFor(model => model.PmDetail)
+                
+
+            </div>
+
+
+
+
+            <div class="col-md-1">
+
+                @Html.DisplayFor(model => model.PmDelete)
+                
+
+            </div>
+        </div>
+
+        <br />
+        <div class="row">
+            <div class="col-md-2" align="right">
+                <b>Location :</b>
+            </div>
+            <div class="col-md-1">
+
+                @Html.DisplayFor(model => model.LcCreate)
+                
+
+            </div>
+
+
+
+
+            <div class="col-md-1">
+
+                @Html.DisplayFor(model => model.LcEdit)
+                
+
+            </div>
+
+
+
+
+            <div class="col-md-1">
+
+                @Html.DisplayFor(model => model.LcDetail)
+                
+
+            </div>
+
+
+
+
+            <div class="col-md-1">
+
+                @Html.DisplayFor(model => model.LcDelete)
+                
+
+            </div>
+        </div>
+    </div>
+
+    <br />
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

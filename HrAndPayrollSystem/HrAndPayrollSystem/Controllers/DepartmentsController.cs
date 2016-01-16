@@ -14,7 +14,7 @@ namespace HrAndPayrollSystem.Controllers
 {
 
     [Authorize]
-    [LayoutInjecter("_PublicLayout")]
+    
     public class DepartmentsController : Controller
     {
 
@@ -24,13 +24,13 @@ namespace HrAndPayrollSystem.Controllers
         public ActionResult Index()
         {
             HttpContext context = System.Web.HttpContext.Current;
-
             string SysCode = (string)(context.Session["syscode"]);
+
             Session["DpCreate"] = (context.Session["DpCreate"]);
             Session["DpEdit"]   = (context.Session["DpEdit"]);
             Session["DpDetail"] = (context.Session["DpDetail"]);
             Session["DpDelete"] = (context.Session["DpDelete"]);
-               
+
             return View(db.Departments.Where(x => x.SystemCode == SysCode).ToList());     
         }
 

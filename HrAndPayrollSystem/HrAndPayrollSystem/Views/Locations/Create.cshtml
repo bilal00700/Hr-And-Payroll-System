@@ -1,0 +1,74 @@
+﻿@model HrAndPayrollSystem.Models.Location
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<section class="content-header">
+    <h1>
+        Create Locations
+        <small>Fill in the fields below to add a location</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><i class="fa fa-cog"></i>&nbsp; Basic Setup</li>
+        <li>@Html.ActionLink("Location", "Index")</li>
+        <li class="active"> Create New</li>
+    </ol>
+</section>
+
+<section class="content">
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        var Lccode = TempData["code"];
+        var syscode = TempData["syscode"];
+
+        <div class="form-horizontal">
+            <h4>Location</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                <div class="col-xs-5">
+                    @Html.EditorFor(model => model.SystemCode, new { htmlAttributes = new { @class = "form-control", @Value = syscode } })
+                    @Html.ValidationMessageFor(model => model.SystemCode, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Code, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-xs-5">
+                    @Html.EditorFor(model => model.Code, new { htmlAttributes = new { @class = "form-control", @Value = Lccode } })
+                    @Html.ValidationMessageFor(model => model.Code, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-xs-5">
+                    @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.PvCode, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-xs-5">
+
+                    @Html.DropDownList("PvCode", (IEnumerable<SelectListItem>)ViewBag.PvCode, "Select Province", new { @class = "form-control" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    }
+
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+</section>
